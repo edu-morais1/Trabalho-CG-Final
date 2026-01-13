@@ -1,0 +1,30 @@
+# Executáveis
+render
+*.exe
+*.out
+a.out
+
+# Arquivos de compilação
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+
+# Diretórios de build
+build/
+cmake-build-*/
+.vscode/
+.idea/
+
+# Imagens de saída (opcional - remova se quiser versionar)
+*.ppm
+*.png
+output.*
+
+# Arquivos temporários
+*.swp
+*.swo
+*~
+.DS_Store
+
