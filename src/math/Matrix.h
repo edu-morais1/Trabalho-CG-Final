@@ -1,16 +1,20 @@
 #pragma once
 #include "Vector.h"
 
+//Struct Mat4, que representa uma matriz 4x4 de doubles
 struct Mat4 {
+  //Erray bi dimensional 4x4({} zera por padrao)
   double m[4][4]{};
 
+  //Matriz identidade
   static Mat4 identity() {
     Mat4 r{};
     for (int i = 0; i < 4; ++i)
       r.m[i][i] = 1.0;
     return r;
   }
-
+  
+  //Matriz de Translacao
   static Mat4 translation(const Vec3 &t) {
     Mat4 r = identity();
     r.m[3][0] = t.x;
@@ -18,7 +22,8 @@ struct Mat4 {
     r.m[3][2] = t.z;
     return r;
   }
-
+  
+  //Funcao que cria a martriz de escala
   static Mat4 scale(double s) {
     Mat4 r{};
     r.m[0][0] = r.m[1][1] = r.m[2][2] = s;
@@ -26,6 +31,7 @@ struct Mat4 {
     return r;
   }
 
+  //Funcao que cria a matriz de rotacao em torno de X
   static Mat4 rotationX(double rad) {
     Mat4 r = identity();
     double c = std::cos(rad), s = std::sin(rad);
@@ -35,7 +41,8 @@ struct Mat4 {
     r.m[2][2] = c;
     return r;
   }
-
+  
+  //Funcao que cria a matriz de rotacao em torno de Y
   static Mat4 rotationY(double rad) {
     Mat4 r = identity();
     double c = std::cos(rad), s = std::sin(rad);
@@ -46,6 +53,7 @@ struct Mat4 {
     return r;
   }
 
+  //Funcao que cria a matriz de rotacao em torno de Z
   static Mat4 rotationZ(double rad) {
     Mat4 r = identity();
     double c = std::cos(rad), s = std::sin(rad);
@@ -55,7 +63,8 @@ struct Mat4 {
     r.m[1][1] = c;
     return r;
   }
-
+  
+  
   Mat4 operator*(const Mat4 &o) const {
     Mat4 r{};
     for (int i = 0; i < 4; ++i)

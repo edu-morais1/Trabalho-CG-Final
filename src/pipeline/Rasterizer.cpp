@@ -9,7 +9,6 @@
 #include <cmath>
 #include <cstdio>
 
-// ============ IMPLEMENTAÇÃO DO FRAMEBUFFER ============
 
 Framebuffer::Framebuffer(int w, int h)
     : width(w), height(h), color(w * h, 0xff000000), depth(w * h, -1e9) {}

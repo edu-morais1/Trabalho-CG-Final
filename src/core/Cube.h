@@ -7,7 +7,7 @@ struct Material {
     double ka{0.1};
     double kd{0.8};
     double ks{0.5};
-    double shininess{32.0};
+    double shininess{32.0};//Espoente
 };
 
 struct Cube {

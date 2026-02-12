@@ -10,7 +10,7 @@ void Cube::baseVertices(Vec3 out[8]) {
     };
     for (int i = 0; i < 8; ++i) out[i] = verts[i];
 }
-
+//MAtriz M
 Mat4 Cube::modelMatrix() const {
     Mat4 S = Mat4::scale(scale);
     Mat4 Rx = Mat4::rotationX(rotation.x);
