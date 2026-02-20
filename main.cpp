@@ -34,6 +34,8 @@ void render_api(
   scene.camera.nearPlane = near_plane;
   scene.camera.farPlane = far_plane;
 
+  scene.camera.updateUVN();
+
   // Adicionar cubos
   for (int i = 0; i < num_cubes; ++i) {
     double *data = &cubes_data[i * 13];

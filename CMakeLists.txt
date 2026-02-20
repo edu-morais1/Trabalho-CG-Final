@@ -4,21 +4,19 @@ project(TrabalhoCG)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Diretórios de include
 include_directories(${CMAKE_SOURCE_DIR})
 
-# Fontes
 set(SOURCES
     src/core/Camera.cpp
     src/core/Cube.cpp
+    src/pipeline/Pipeline.cpp
     src/pipeline/Shading.cpp
     src/pipeline/Rasterizer.cpp
     main.cpp
 )
 
-# Executável
-add_executable(render ${SOURCES})
+# Biblioteca compartilhada (carregada pelo Python via ctypes)
+add_library(render SHARED ${SOURCES})
 
-# Para debug
-target_compile_options(render PRIVATE -Wall -Wextra -g)
+target_compile_options(render PRIVATE -Wall -Wextra -O2)
 
